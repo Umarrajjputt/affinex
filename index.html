@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://affinex.store/" />
     <meta name="msvalidate.01" content="67172A192EC26004EA16E9F13ED4CC63" />
-    <title>AFFINEX | Luxury Boutique Store</title>
+    <title>AFFINEX | Happy Birthday to a Special Person</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1170,6 +1170,261 @@
         }
 
 
+
+        /* ========== BIRTHDAY EDITION ========== */
+        :root {
+            --rose: #c45c7a;
+            --rose-deep: #8b2d4a;
+            --blush: #f4d6de;
+            --petal: #e8a0b4;
+        }
+        .announcement-bar {
+            background: linear-gradient(90deg, #4a1024 0%, #7a1f3d 50%, #4a1024 100%) !important;
+        }
+        #bdayLayer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 40;
+            overflow: hidden;
+        }
+        .bday-balloon {
+            position: absolute;
+            bottom: -90px;
+            border-radius: 50% 50% 50% 50% / 42% 42% 58% 58%;
+            background: radial-gradient(circle at 32% 28%, rgba(255,255,255,0.75), transparent 28%), var(--bcolor, #e891a8);
+            box-shadow: inset -8px -12px 18px rgba(0,0,0,0.18), 0 8px 18px rgba(0,0,0,0.12);
+            animation: balloonRise linear infinite;
+            opacity: 0.92;
+        }
+        .bday-balloon::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -7px;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 9px solid var(--bcolor, #e891a8);
+            filter: brightness(0.85);
+        }
+        .bday-balloon::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 1px;
+            height: 72px;
+            background: linear-gradient(180deg, rgba(80,40,40,0.35), transparent);
+            transform: translateX(-50%);
+        }
+        @keyframes balloonRise {
+            0%   { transform: translate3d(0, 0, 0) rotate(-6deg); opacity: 0; }
+            8%   { opacity: 0.92; }
+            50%  { transform: translate3d(18px, -55vh, 0) rotate(5deg); }
+            100% { transform: translate3d(-10px, -115vh, 0) rotate(-8deg); opacity: 0; }
+        }
+        .bday-petal {
+            position: absolute;
+            top: -30px;
+            color: var(--rose);
+            opacity: 0.7;
+            animation: petalFall linear infinite;
+            text-shadow: 0 2px 6px rgba(196,92,122,0.25);
+            line-height: 1;
+        }
+        @keyframes petalFall {
+            0%   { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+            10%  { opacity: 0.75; }
+            100% { transform: translate3d(40px, 110vh, 0) rotate(360deg); opacity: 0; }
+        }
+        .bday-corner {
+            position: fixed;
+            width: 160px;
+            height: 160px;
+            z-index: 41;
+            pointer-events: none;
+            opacity: 0.85;
+        }
+        .bday-corner-tl { top: 86px; left: 0; }
+        .bday-corner-tr { top: 86px; right: 0; transform: scaleX(-1); }
+        .bday-corner-bl { bottom: 0; left: 0; transform: scaleY(-1); }
+        .bday-corner-br { bottom: 0; right: 0; transform: scale(-1); }
+        @media (max-width: 768px) {
+            .bday-corner { width: 88px; height: 88px; opacity: 0.7; }
+            .bday-corner-tl, .bday-corner-tr { top: 122px; }
+            .bday-dedication::before, .bday-dedication::after { display: none; }
+        }
+        .bday-dedication {
+            position: relative;
+            background:
+                radial-gradient(ellipse 70% 80% at 50% 0%, rgba(196,92,122,0.18), transparent 60%),
+                linear-gradient(180deg, #14080c 0%, #0a0a0a 100%);
+            color: #fff;
+            text-align: center;
+            padding: 56px 24px 48px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(197,160,89,0.22);
+        }
+        .bday-dedication::before,
+        .bday-dedication::after {
+            content: '✿';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.6rem;
+            color: var(--gold);
+            opacity: 0.55;
+        }
+        .bday-dedication::before { left: 8%; }
+        .bday-dedication::after { right: 8%; }
+        .bday-kicker {
+            font-size: 0.62rem;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+        .bday-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2.6rem, 8vw, 5.2rem);
+            letter-spacing: 10px;
+            line-height: 1;
+            color: #fff;
+            margin: 0 0 10px;
+            text-shadow: 0 18px 40px rgba(0,0,0,0.45);
+        }
+        .bday-to {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1.35rem, 3.4vw, 2.1rem);
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+        .bday-offer {
+            margin-top: 18px;
+            font-size: 0.68rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.62);
+        }
+        .bday-offer strong {
+            color: var(--blush);
+            font-weight: 700;
+        }
+        .sale-ribbon {
+            position: absolute;
+            top: 18px;
+            right: -36px;
+            background: var(--rose-deep);
+            color: #fff;
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 8px 42px;
+            transform: rotate(45deg);
+            z-index: 6;
+            box-shadow: 0 6px 16px rgba(139,45,74,0.35);
+        }
+        .home-section-title h2::before,
+        .home-section-title h2::after {
+            content: '❀';
+            font-size: 0.7em;
+            color: var(--rose);
+            margin: 0 12px;
+            opacity: 0.7;
+            font-family: Georgia, serif;
+        }
+        .logo::after {
+            content: '✿';
+            font-size: 0.55em;
+            margin-left: 8px;
+            color: var(--petal);
+            letter-spacing: 0;
+        }
+        .home-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(196,92,122,0.28), transparent 58%),
+                radial-gradient(circle at 12% 80%, rgba(197,160,89,0.12), transparent 40%);
+            pointer-events: none;
+        }
+        .home-hero > * { position: relative; z-index: 1; }
+        .splash-logo::after {
+            content: ' ✿';
+            font-size: 0.28em;
+            letter-spacing: 0;
+            vertical-align: super;
+        }
+        .bday-splash-note {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            color: var(--blush);
+            letter-spacing: 3px;
+            margin: -40px 0 28px;
+        }
+        .splash-blooms {
+            color: var(--gold);
+            letter-spacing: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 36px;
+            opacity: 0.85;
+        }
+        .splash-float {
+            position: absolute;
+            border-radius: 50% 50% 50% 50% / 42% 42% 58% 58%;
+            animation: balloonRise 14s linear infinite;
+            z-index: 1;
+        }
+        .splash-float.a { left: 12%; width: 42px; height: 54px; background: #e891a8; animation-delay: -2s; }
+        .splash-float.b { left: 78%; width: 36px; height: 46px; background: #C5A059; animation-delay: -6s; }
+        .splash-float.c { left: 22%; width: 28px; height: 36px; background: #f7e7c6; animation-delay: -9s; }
+        .splash-float.d { left: 86%; width: 48px; height: 60px; background: #d46a8a; animation-delay: -4s; }
+        .off-chip {
+            display: inline-block;
+            margin-left: 8px;
+            background: var(--rose-deep);
+            color: #fff;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 2px;
+            padding: 3px 8px;
+            vertical-align: middle;
+        }
+        .cats-hero {
+            background:
+                linear-gradient(rgba(20,8,12,0.78), rgba(10,10,10,0.92)),
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070') center/cover fixed !important;
+        }
+        .footer-logo-divider span::before,
+        .footer-logo-divider span::after {
+            content: ' ❀ ';
+            color: var(--rose);
+            letter-spacing: 0;
+        }
+        .sale-timer {
+            background: linear-gradient(90deg, #3a0d1a, #6e1c38, #3a0d1a) !important;
+            border-color: rgba(196,92,122,0.35) !important;
+        }
+        .card { position: relative; }
+        .bday-garland {
+            height: 10px;
+            background-image: radial-gradient(circle, var(--gold) 1.5px, transparent 1.8px),
+                              radial-gradient(circle, var(--petal) 1.5px, transparent 1.8px);
+            background-size: 28px 10px, 28px 10px;
+            background-position: 0 50%, 14px 50%;
+            background-repeat: repeat-x;
+            opacity: 0.7;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .bday-balloon, .bday-petal, .marquee, .sp { animation: none !important; }
+        }
+
         /* ========== LEGAL MODAL ========== */
         #legalModal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -1391,19 +1646,52 @@
 </head>
 <body style="overflow: hidden;">
 
+<div id="bdayLayer" aria-hidden="true"></div>
+<svg class="bday-corner bday-corner-tl" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M8 8 C40 12, 28 70, 70 52 C90 42, 60 20, 78 12 C96 4, 110 30, 92 48 C120 40, 140 70, 118 92 C148 88, 152 130, 120 140" stroke="#C5A059" stroke-width="1.2"/>
+  <circle cx="78" cy="28" r="10" fill="#c45c7a" opacity="0.85"/>
+  <circle cx="74" cy="24" r="4" fill="#f4d6de"/>
+  <circle cx="108" cy="78" r="8" fill="#C5A059" opacity="0.8"/>
+  <circle cx="52" cy="58" r="7" fill="#e8a0b4"/>
+  <path d="M40 90 C55 70, 80 95, 70 120" stroke="#6a8f62" stroke-width="1.4"/>
+  <ellipse cx="62" cy="96" rx="10" ry="5" fill="#6a8f62" opacity="0.7" transform="rotate(-30 62 96)"/>
+</svg>
+<svg class="bday-corner bday-corner-tr" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M8 8 C40 12, 28 70, 70 52 C90 42, 60 20, 78 12 C96 4, 110 30, 92 48 C120 40, 140 70, 118 92 C148 88, 152 130, 120 140" stroke="#C5A059" stroke-width="1.2"/>
+  <circle cx="78" cy="28" r="10" fill="#c45c7a" opacity="0.85"/>
+  <circle cx="74" cy="24" r="4" fill="#f4d6de"/>
+  <circle cx="108" cy="78" r="8" fill="#C5A059" opacity="0.8"/>
+  <circle cx="52" cy="58" r="7" fill="#e8a0b4"/>
+  <path d="M40 90 C55 70, 80 95, 70 120" stroke="#6a8f62" stroke-width="1.4"/>
+  <ellipse cx="62" cy="96" rx="10" ry="5" fill="#6a8f62" opacity="0.7" transform="rotate(-30 62 96)"/>
+</svg>
+<svg class="bday-corner bday-corner-bl" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M8 8 C40 12, 28 70, 70 52 C90 42, 60 20, 78 12 C96 4, 110 30, 92 48 C120 40, 140 70, 118 92" stroke="#C5A059" stroke-width="1.2"/>
+  <circle cx="78" cy="28" r="10" fill="#e891a8"/>
+  <circle cx="108" cy="78" r="8" fill="#C5A059"/>
+  <circle cx="52" cy="58" r="7" fill="#f4d6de"/>
+</svg>
+<svg class="bday-corner bday-corner-br" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M8 8 C40 12, 28 70, 70 52 C90 42, 60 20, 78 12 C96 4, 110 30, 92 48 C120 40, 140 70, 118 92" stroke="#C5A059" stroke-width="1.2"/>
+  <circle cx="78" cy="28" r="10" fill="#e891a8"/>
+  <circle cx="108" cy="78" r="8" fill="#C5A059"/>
+  <circle cx="52" cy="58" r="7" fill="#f4d6de"/>
+</svg>
+
+
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
 <div class="announcement-bar">
     <div class="marquee" id="announcementMarquee">
-        <span>⚡ FLASH SALE — UP TO 50% OFF STOREWIDE ⚡</span>
+        <span>✿ HAPPY BIRTHDAY TO A SPECIAL PERSON ✿</span>
+        <span>🎈 70% OFF EVERYTHING — TODAY ONLY 🎈</span>
+        <span>❀ A LUXURY CELEBRATION BY AFFINEX ❀</span>
         <span>✨ FREE SHIPPING ALL OVER PAKISTAN ✨</span>
-        <span>⚡ LIMITED TIME ONLY — SHOP NOW ⚡</span>
-        <span>💎 100% AUTHENTICITY GUARANTEED 💎</span>
-        <span>⚡ FLASH SALE — UP TO 50% OFF STOREWIDE ⚡</span>
+        <span>✿ HAPPY BIRTHDAY TO A SPECIAL PERSON ✿</span>
+        <span>🎈 70% OFF EVERYTHING — TODAY ONLY 🎈</span>
+        <span>❀ A LUXURY CELEBRATION BY AFFINEX ❀</span>
         <span>✨ FREE SHIPPING ALL OVER PAKISTAN ✨</span>
-        <span>⚡ LIMITED TIME ONLY — SHOP NOW ⚡</span>
-        <span>💎 100% AUTHENTICITY GUARANTEED 💎</span>
     </div>
 </div>
 
@@ -1411,10 +1699,16 @@
     <div class="splash-bg"></div>
     <div class="splash-lines"></div>
     <div class="splash-particles" id="splashParticles"></div>
+    <div class="splash-float a" aria-hidden="true"></div>
+    <div class="splash-float b" aria-hidden="true"></div>
+    <div class="splash-float c" aria-hidden="true"></div>
+    <div class="splash-float d" aria-hidden="true"></div>
     <div class="splash-content animate__animated animate__fadeIn">
         <span class="splash-logo">AFFINEX</span>
-        <span class="splash-tagline">Experience Pure Luxury</span>
-        <button class="btn-luxury" onclick="enterStore()">ENTER STORE</button>
+        <span class="splash-tagline">A Birthday Celebration</span>
+        <div class="bday-splash-note">Happy Birthday to a Special Person</div>
+        <div class="splash-blooms" aria-hidden="true">❀ &nbsp; ✿ &nbsp; ❁ &nbsp; ✿ &nbsp; ❀</div>
+        <button class="btn-luxury" onclick="enterStore()">ENTER THE CELEBRATION</button>
     </div>
 </div>
 
@@ -1434,18 +1728,27 @@
 
 <div id="homePage">
 
+    <section class="bday-dedication" aria-label="Birthday dedication">
+        <div class="bday-kicker">A Private Celebration · Today Only</div>
+        <h2 class="bday-title">Happy Birthday</h2>
+        <p class="bday-to">to a Special Person</p>
+        <div class="gold-line"></div>
+        <p class="bday-offer">The entire AFFINEX collection is <strong>70% off</strong> in her honour.</p>
+    </section>
+    <div class="bday-garland" aria-hidden="true"></div>
+
     <div class="home-hero" id="homeHero">
-        <div id="heroEyebrow" class="hero-eyebrow animate__animated animate__fadeInUp animate__delay-1s">Established 2025</div>
-        <h1 id="heroH1" class="animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.2s;">AFFI<span>NEX</span></h1>
-        <div id="heroSub" class="hero-sub animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.4s;">Curated Luxury — Delivered Across Pakistan</div>
+        <div id="heroEyebrow" class="hero-eyebrow animate__animated animate__fadeInUp animate__delay-1s">A Birthday Celebration</div>
+        <h1 id="heroH1" class="animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.2s;">HAPPY <span>BIRTHDAY</span></h1>
+        <div id="heroSub" class="hero-sub animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.4s;">to a Special Person — 70% Off the Entire Collection</div>
         <div class="home-hero-btns animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.6s;">
-            <button class="btn-luxury" onclick="showPage('categories')" style="background:var(--gold); color:var(--dark);">SHOP COLLECTION</button>
+            <button class="btn-luxury" onclick="showPage('categories')" style="background:var(--gold); color:var(--dark);">SHOP 70% OFF</button>
             <button class="btn-luxury" onclick="document.getElementById('homeProducts').scrollIntoView({behavior:'smooth'})">FEATURED PICKS</button>
         </div>
     </div>
 
     <div class="sale-timer" id="saleTimerBar">
-        <span id="saleTimerText">⚡ &nbsp;FLASH SALE ENDS IN:&nbsp;</span><span class="timer-digits" id="countdown">12:00:00</span><span id="saleTimerTextEnd"> &nbsp;⚡</span>
+        <span id="saleTimerText">✿ &nbsp;BIRTHDAY SALE · 70% OFF ENDS IN:&nbsp;</span><span class="timer-digits" id="countdown">12:00:00</span><span id="saleTimerTextEnd"> &nbsp;⚡</span>
     </div>
 
     <div class="trust-strip reveal-on-scroll">
@@ -1625,7 +1928,7 @@
 <div id="categoriesPage">
     <div class="cats-hero">
         <h2 id="catsHeroH2">COLLECTIONS</h2>
-        <p style="color:rgba(197,160,89,0.8); letter-spacing:6px; font-size:0.75rem; margin-top:12px; text-transform:uppercase;">Explore Our Full Range</p>
+        <p style="color:rgba(197,160,89,0.8); letter-spacing:6px; font-size:0.75rem; margin-top:12px; text-transform:uppercase;">70% Off · Birthday Collection</p>
     </div>
 
     <div class="cats-page-cats" id="catBar">
@@ -2007,6 +2310,50 @@
         }
     ];
 
+
+    // ========== BIRTHDAY PRICING (70% OFF) ==========
+    const BIRTHDAY_OFF = 0.7;
+    function getSalePrice(p) {
+        const base = typeof p === 'number' ? p : Number(p && p.price) || 0;
+        return Math.max(1, Math.round(base * (1 - BIRTHDAY_OFF)));
+    }
+
+    (function spawnBirthdayDecor() {
+        const layer = document.getElementById('bdayLayer');
+        if (!layer) return;
+        const colors = ['#e891a8', '#C5A059', '#f7e7c6', '#d46a8a', '#f0c4ce', '#c9a07a', '#fff5f7'];
+        const n = window.innerWidth < 700 ? 8 : 14;
+        for (let i = 0; i < n; i++) {
+            const b = document.createElement('div');
+            b.className = 'bday-balloon';
+            const color = colors[i % colors.length];
+            const left = (4 + i * (92 / n) + (Math.random() * 4 - 2));
+            const dur = 16 + Math.random() * 14;
+            const delay = -Math.random() * 22;
+            const size = 32 + Math.random() * 22;
+            b.style.setProperty('--bcolor', color);
+            b.style.left = left + '%';
+            b.style.width = size + 'px';
+            b.style.height = (size * 1.28) + 'px';
+            b.style.animationDuration = dur + 's';
+            b.style.animationDelay = delay + 's';
+            layer.appendChild(b);
+        }
+        const petalN = window.innerWidth < 700 ? 14 : 24;
+        const glyphs = ['❀', '✿', '❁'];
+        for (let i = 0; i < petalN; i++) {
+            const p = document.createElement('div');
+            p.className = 'bday-petal';
+            p.textContent = glyphs[i % glyphs.length];
+            p.style.left = (Math.random() * 100) + '%';
+            p.style.fontSize = (12 + Math.random() * 12) + 'px';
+            p.style.animationDuration = (9 + Math.random() * 10) + 's';
+            p.style.animationDelay = (-Math.random() * 14) + 's';
+            p.style.color = i % 2 === 0 ? '#c45c7a' : '#C5A059';
+            layer.appendChild(p);
+        }
+    })();
+
     const featuredIds = ['rx2', 'rw1', 'rx1'];
     // Store reference so admin module can access and modify it
     window._liveProducts = products;
@@ -2065,8 +2412,10 @@
     }
 
     function makeCard(p) {
+        const sale = getSalePrice(p);
         return `<div class="card">
             <div class="card-img-wrap">
+                <div class="sale-ribbon">70% OFF</div>
                 ${p.badge ? `<div class="p-badge">${p.badge}</div>` : ''}
                 <img src="${p.img}" onclick="viewDetails('${p.id}')" alt="${p.name}">
                 <div class="quick-view-overlay">
@@ -2076,12 +2425,13 @@
             <div class="card-content">
                 <div class="p-name">${p.name}</div>
                 <div class="p-price">
-                    <span class="old-price">Rs. ${(p.price * 2).toLocaleString()}</span>
-                    <span class="price-current">Rs. ${p.price.toLocaleString()}</span>
+                    <span class="old-price">Rs. ${p.price.toLocaleString()}</span>
+                    <span class="price-current">Rs. ${sale.toLocaleString()}</span>
+                    <span class="off-chip">70% OFF</span>
                 </div>
-                <span class="free-tag">🚚 COMPLIMENTARY DELIVERY</span>
+                <span class="free-tag">🚚 COMPLIMENTARY DELIVERY · BIRTHDAY PRICE</span>
                 <div class="btn-box">
-                    <button class="buy-now" onclick="openOrder('${p.name}', true)">Buy Now</button>
+                    <button class="buy-now" onclick="openOrder('${p.name} — Rs. ${sale.toLocaleString()} (70% OFF)', true)">Buy Now</button>
                     <button class="add-cart" onclick="addToCart('${p.id}')">Add to Bag</button>
                 </div>
             </div>
@@ -2150,7 +2500,7 @@
         }
 
         document.getElementById('det-name').innerText = p.name;
-        document.getElementById('det-price').innerHTML = `<span style="text-decoration:line-through; color:#aaa; font-size:1.2rem; margin-right:15px;">Rs. ${(p.price * 2).toLocaleString()}</span> Rs. ${p.price.toLocaleString()}`;
+        document.getElementById('det-price').innerHTML = `<span style="text-decoration:line-through; color:#aaa; font-size:1.2rem; margin-right:15px;">Rs. ${p.price.toLocaleString()}</span> Rs. ${getSalePrice(p).toLocaleString()} <span class="off-chip">70% OFF</span>`;
         document.getElementById('det-desc').innerText = p.desc;
         
         const imgContainer = document.getElementById('det-imgs');
@@ -2160,7 +2510,7 @@
         }
         
         const tagContainer = document.getElementById('det-tags-container');
-        let tagsHtml = `<span class="tag-item">🚚 Free Delivery</span>`;
+        let tagsHtml = `<span class="tag-item">🎂 70% Birthday Off</span><span class="tag-item">🚚 Free Delivery</span>`;
         if(p.noCod) {
             tagsHtml += `<span class="tag-item no-cod-tag">⚠️ Pre-payment Required</span>`;
         } else {
@@ -2200,7 +2550,7 @@
                 finalName += ` (Size: ${sVal})`;
             }
             closeDetails();
-            openOrder(finalName, true); 
+            openOrder(finalName + ' — Rs. ' + getSalePrice(p).toLocaleString() + ' (70% OFF)', true); 
         };
         document.getElementById('detCartBtn').onclick = () => { addToCart(p.id); };
         
@@ -2232,7 +2582,9 @@
     // ========== CART ==========
     function addToCart(id) {
         haptic('success');
-        cart.push(products.find(i => i.id === id));
+        const srcP = (window._liveProducts || products).find(i => i.id === id);
+        if (!srcP) return;
+        cart.push({ ...srcP, origPrice: srcP.price, price: getSalePrice(srcP) });
         renderCart();
         openCart();
     }
@@ -2282,7 +2634,7 @@
     }
 
     function checkoutCart() { 
-        let details = cart.map(i => i.name).join(", "); 
+        let details = cart.map(i => i.name + ' — Rs. ' + i.price.toLocaleString() + ' (70% OFF)').join(", "); 
         closeCart(); 
         openOrder(details, false); 
     }
